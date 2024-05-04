@@ -1,0 +1,22 @@
+.tree-viewer {
+  list-style-type: none;
+  padding-left: 1rem;
+  user-select: none;
+  width: fit-content;
+}
+
+.tree-viewer--hidden {
+  display: none;
+}
+
+.tree-viewer__directory-name {
+  cursor: pointer;
+}
+
+.tree-viewer__file {
+  color: #0284c7;
+}
+
+.tree-viewer__file-size {
+  color: #737373;
+}
