@@ -23,6 +23,9 @@ export default function Home() {
         <li style={{ margin: '10px' }}>
           <Link href={`/coding-exercise/arrays`}>Arrays</Link>
         </li>
+        <li style={{ margin: '10px' }}>
+          <Link href={`/coding-exercise/linked-list`}>Linked List</Link>
+        </li>
       </ol>
     </div>
   )
