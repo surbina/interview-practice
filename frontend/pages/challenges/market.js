@@ -48,6 +48,10 @@ function useGetId() {
 
 // Start: 17.22
 // End: 19.20 too slow?
+// How to improve?
+//   - Use style attribute instead of css
+//   - Review basic form apis, specially for elements that are not that common (FormData, select, checkbox, radio, date, file, password, range, time, week)
+//   - Review splice and toSpliced api
 function MarketOrders() {
   /*
     type Order= {
