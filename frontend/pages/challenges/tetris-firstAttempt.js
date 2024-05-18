@@ -125,7 +125,6 @@ function useTetris() {
 
     if (hasSpaceToMove(newState, 'down')) {
       movePieceTo(newState, 'down')
-      
     } else {
       //
     }
