@@ -8,7 +8,8 @@ const paths = [
   'sudoku',
   'tetris',
   'tetris-firstAttempt',
-  'questionnaire'
+  'questionnaire',
+  'markdown-parser',
 ]
 
 export default function Home() {
