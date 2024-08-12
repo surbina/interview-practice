@@ -60,7 +60,7 @@ const GridGame = () => {
 
   return (
     <>
-      <div style={{ display: 'grid', gridTemplateRows: 'repeat(4, 1fr)', gridTemplateColumns: 'repeat(4, 1fr)', width: 'fit-content', gap: 4, border: '1px solid black', padding: 2 }}>
+      <div style={{ display: 'grid', grid: 'repeat(4, 1fr) / repeat(4, 1fr)', gap: 2, width: 'fit-content', border: '1px solid black', padding: 2 }}>
         {cells.map((cell, i) => (
           <button key={i} style={cellStyles[cell.status]} onClick={handleCellClick(i)}>
             {cell.status}

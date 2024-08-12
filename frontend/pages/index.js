@@ -1,6 +1,7 @@
 import Link from 'next/link'
 
 const paths = [
+  'code-snippets',
   'file-tree-viewer',
   'hooks',
   'market',
