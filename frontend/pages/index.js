@@ -10,6 +10,7 @@ const paths = [
   'tetris-firstAttempt',
   'questionnaire',
   'markdown-parser',
+  'grid',
 ]
 
 export default function Home() {
