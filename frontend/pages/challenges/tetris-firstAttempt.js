@@ -71,8 +71,8 @@ function hasSpaceToMove(state, direction) {
     case 'square': {
       switch(direction) {
         case 'down': {
-          return (grid?.[currentPiece.y + 1 + 2]?.[currentPiece.x]?.fillColor) === null &&
-            (grid?.[currentPiece.y + 1 + 2][currentPiece.x + 1]?.fillColor) === null;
+          return (grid?.[currentPiece.y + 2]?.[currentPiece.x]?.fillColor) === null &&
+            (grid?.[currentPiece.y + 2][currentPiece.x + 1]?.fillColor) === null;
         }
       }
     }
@@ -87,8 +87,6 @@ function movePieceTo(state, direction) {
     case 'square': {
       switch(direction) {
         case 'down': {
-          // return Boolean(grid?.[currentPiece.y + 1 + 2]?.[currentPiece.x]?.fillColor) &&
-          //   Boolean(grid?.[currentPiece.y + 1 + 2][currentPiece.x + 1]?.fillColor);
           if (grid?.[currentPiece.y]?.[currentPiece.x]) {
             grid[currentPiece.y][currentPiece.x].fillColor = null;
           }
@@ -99,10 +97,8 @@ function movePieceTo(state, direction) {
 
           grid[currentPiece.y + 1][currentPiece.x].fillColor = 'lightblue';
           grid[currentPiece.y + 1][currentPiece.x + 1].fillColor = 'lightblue';
-
           grid[currentPiece.y + 2][currentPiece.x].fillColor = 'lightblue';
           grid[currentPiece.y + 2][currentPiece.x + 1].fillColor = 'lightblue';
-
           currentPiece.y = currentPiece.y + 1
 
           return;
@@ -110,6 +106,30 @@ function movePieceTo(state, direction) {
       }
     }
   }
+}
+
+function setPieceFinalPosition(state) {
+  const { currentPiece, grid } = state;
+  // paint the piece cell to the final color
+  switch(currentPiece.type) {
+    case 'square': {
+      if (currentPiece.y < 0) {
+        break;
+      }
+
+      grid[currentPiece.y][currentPiece.x].fillColor = 'blue'
+      grid[currentPiece.y + 1][currentPiece.x].fillColor = 'blue'
+      grid[currentPiece.y][currentPiece.x + 1].fillColor = 'blue'
+      grid[currentPiece.y + 1][currentPiece.x + 1].fillColor = 'blue'
+      break;
+    }
+  }
+
+  // check if there any completed lines
+  //   if there are lines, remove completed lines (increase score?)
+
+  // clear currentPiece
+  state.currentPiece = null;
 }
 
 function useTetris() {
@@ -124,9 +144,9 @@ function useTetris() {
     }
 
     if (hasSpaceToMove(newState, 'down')) {
-      movePieceTo(newState, 'down')
+      movePieceTo(newState, 'down');
     } else {
-      //
+      setPieceFinalPosition(newState);
     }
 
     console.log({ piece: newState.currentPiece })
