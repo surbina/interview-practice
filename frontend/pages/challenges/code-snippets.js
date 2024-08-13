@@ -13,6 +13,13 @@ export default function CodeSnippets() {
 
       <h2>Create array</h2>
       <pre>{`const list = new Array(size).fill(null).map((_, i) => setInitialValue(i))`}</pre>
+
+      <h2>Get random item from array</h2>
+      <pre>{`const randomValue = myArray[Math.floor(Math.random() * myArray.length)]`}</pre>
+
+      <h2>Snippet to force re-render</h2>
+      <pre>{`const [, render] = React.useReducer(() => ({}));
+render();`}</pre>
     </div>
   );
 }
